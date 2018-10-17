@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kenziegram</title>
+</head>
+<body>
+    <section>
+        <form method="POST" action="uploads/" enctype="multipart/form-data">
+            <div>
+                <label for="image-upload">Upload an image</label>
+                <input type="file" id="image-upload" name="myImage">
+            </div>
+            <div>
+                <button type="submit">Upload Image</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="images-container">
+
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html lang="en" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="top" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" id="top" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>Hummingbird Hawk-Moth Facts | Insects in Education</title>
+<meta name="description" content="Is that a hummingbird? Or is it a butterfly? No, it's the hummingbird hawk-moth, an insect that does its best to look like a hummingbird! That's right, when it comes to the insect world, imitation is the sincerest form of flattery." />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="icon" href="http://static.saferbrand.com/skin/frontend/rwd/sbus/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://static.saferbrand.com/skin/frontend/rwd/sbus/favicon.ico" type="image/x-icon" />
+<link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700|Muli:400,300italic,300,400italic|Roboto+Condensed:400,700,400italic|Roboto:400,400italic,700|Montserrat:400,700|Boogaloo:400,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Questrial" rel="stylesheet">
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://static.saferbrand.com/js/blank.html';
+    var BLANK_IMG = 'http://static.saferbrand.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<!--[if IE]>
+<link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:bold" rel="stylesheet" type='text/css' />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="http://static.saferbrand.com/media/css/caea12b10d267a595507950ac97f338b.css" media="screen, all" data-handle="default" />
+<link rel="stylesheet" type="text/css" href="http://static.saferbrand.com/media/css/b477f5b6dc0add682ef093ddbcd5b3cf.css" media="all, screen" data-handle="default" />
+<link rel="stylesheet" type="text/css" href="http://static.saferbrand.com/media/css/05e47c57908984372460fc4e4b5098c7.css" data-handle="default" />
+<link rel="stylesheet" type="text/css" href="http://static.saferbrand.com/media/css/556229bef01a1bbdfa244e7d47edcda9.css?v=2.7.18" data-handle="default" />
+<script type="text/javascript" src="http://static.saferbrand.com/media/js/e28b7a9dcfee36a20b021afe68f3286b.js" data-handle="default"></script>
+<link rel="canonical" href="http://www.saferbrand.com/advice/insect-library/insect-education/hummingbird-hawk-moth" />
+<!--[if  (lte IE 8) & (!IEMobile)]>
+<link rel="stylesheet" type="text/css" href="http://static.saferbrand.com/media/css/53cd16d4dacbbea31834d18522230bba.css" data-handle="default" />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://static.saferbrand.com/media/css/5c4c7faed10e56f92e86746b331c8760.css" data-handle="default" />
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.saferbrand.com';
+//]]>
+</script>
+<meta name="viewport" content="minimum-scale=1.0, width=device-width,  maximum-scale=0.6667, user-scalable=no" />
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["HK","IE","MO","PA"];
+//]]>
+</script>
+<link rel="stylesheet" type="text/css" href="http://static.saferbrand.com/skin/frontend/rwd/sbus/pronav/css/pronav.theme-default.css" media="all" /><script type="text/javascript">
+//<![CDATA[
+var mbPopupParams = {"storeId":"28","previewId":0,"templateId":0,"popupPageId":7,"filterId":0,"isAjax":"1","requestType":"3","rootUrl":"http:\/\/static.saferbrand.com\/","baseUrl":"http%3A%2F%2Fwww.saferbrand.com%2F","ajaxAsync":"true","doGaTracking":"true","customParams":""};
+
+//]]>
+</script>
+    <script async type="text/javascript" src="http://static.saferbrand.com/skin/frontend/base/default/js/magebird_popup/main.js?v=1.5.2"></script>
+ 
+<meta property="og:title" content="Hummingbird Hawk-Moth Facts | Insects in Education"/>
+<meta property="og:url" content="http://www.saferbrand.com/advice/insect-library/insect-education/hummingbird-hawk-moth"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Safer® Brand"/>
+<meta property="og:type" content="ecommerce"/>
+<meta property="og:description" content="Is that a hummingbird? Or is it a butterfly? No, it&#039;s the hummingbird hawk-moth, an insect that does its best to look like a hummingbird! That&#039;s right, when it comes to the insect world, imitation is the sincerest form of flattery."/>
+<meta property="fb:admins" content="1017233794992330"/><style><!--
+    .right { float:right; max-width:40%; }
+    .left { float:left; max-width:40%; }
+    .icon { max-width:25%!important; min-width:100px; margin-top:-10px; }
+    #iotw-raft-spider .graybox { width:calc(100% - 2em); box-sizing:border-box; padding:0 28px 28px 28px; background-color:#ededed; margin-top:1em; }
+    #iotw-raft-spider .graybox span { margin-bottom:1em; }
+    #iotw-raft-spider .graybox img.wide { width:calc(100% + 4em); height:auto; margin-bottom:1em; max-width:none; }
+    #iotw-raft-spider .iotw-map { width:100%; height:auto; margin:1em 0; }
+    #iotw-raft-spider .title-card .pre-head { display:block; color:#006f66; font-size:20px; margin-bottom:1em; font-weight:bold; }
+    #iotw-raft-spider .title-card h1 { border-bottom:none!important; font-size:28px; }
+    #iotw-raft-spider .title-card p { font-size:16px; }
+    #iotw-raft-spider .iotw-copy p { font-size:16px!important; line-height:25px; }
+    .hang-indent { display:block; padding-left:4em; text-indent:-4em; }
+    .classification { width:75%; }x
+    .red-text { color: #cc0000; }
+    @media screen and (max-width:575px) {
+        #iotw-raft-spider .title-card .pre-head { font-size:14px; } 
+        #iotw-raft-spider .graybox img.wide { width:calc(100% + 4em); margin-left:-2em; }
+        #iotw-raft-spider .graybox { width:100%; }
+        .classification { width:calc(100% - 2em); }
+        .hang-indent { padding-left:2em; text-indent:-2em; }
+    }
+    --></style><script type="text/javascript">//<![CDATA[
+        var Translator = new Translate([]);
+        //]]></script><script>
+// the page to take user to when no results are found 
+var klevu_noResultsFoundUrl = 'http://www.saferbrand.com/no-search-results';
+var klevu_truncateFilterLabel=false;  
+</script><script type="text/javascript">
+	var base_url = "http://www.saferbrand.com/";
+    var storeCode = 'SB_US_EN';
+    function imageLoading() {
+      var imgDefer = document.getElementsByTagName('img');
+      for (var i = 0; i < imgDefer.length; i++) {
+        if (img = imgDefer[i].getAttribute('data-src')) {
+          imgDefer[i].setAttribute('src', img);
+        }
+      }
+    }
+
+    function downloadJSAtOnload(url, type) {
+      if (url) {
+        var head = document.getElementsByTagName("head")[0];
+        if (type == 'css') {
+          var element = document.createElement('link');
+          element.rel = 'stylesheet';
+          element.type = 'text/css';
+          element.href = url;
+          //here's the magic
+          head.appendChild(element, head.firstChild);
+        }
+        if (type == 'js') {
+          var element = document.createElement("script");
+          element.src = url;
+          head.appendChild(element);
+        }
+      }
+    }
+    jQuery(document).ready(function(){
+      //downloadJSAtOnload("", 'css');
+      //downloadJSAtOnload("", 'js');
+      imageLoading();
+    });
+</script>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Open+Sans+Condensed:300,700:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+  
+   WebFontConfig = {
+    google: { families: [ 'Boogaloo::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+ </script>
+</head>
+<body class=" cms-page-view cms-advice-insect-library-insect-education-hummingbird-hawk-moth"><script type="text/javascript">
+(function() { var z="";var b="2866756e6374696f6e2829207b0d0a2066756e6374696f6e2067657453657373696f6e436f6f6b6965732829207b0d0a0976617220636f6f6b69654172726179203d206e657720417272617928293b0d0a0976617220634e616d65203d206e65772052656745787028275e5c5c733f696e6361705f7365735f27293b0d0a097661722063203d20646f63756d656e742e636f6f6b69652e73706c697428223b22293b0d0a09666f7220287661722069203d20303b2069203c20632e6c656e6774683b20692b2b29207b0d0a0909766172206b6579203d20635b695d2e73756273747228302c20635b695d2e696e6465784f6628223d2229293b0d0a09097661722076616c7565203d20635b695d2e73756273747228635b695d2e696e6465784f6628223d2229202b20312c20635b695d2e6c656e677468293b0d0a090969662028634e616d652e74657374286b65792929207b0d0a090909636f6f6b696541727261795b636f6f6b696541727261792e6c656e6774685d203d2076616c75653b0d0a09097d0d0a097d0d0a0972657475726e20636f6f6b696541727261793b0d0a207d0d0a2066756e6374696f6e20736574496e636170436f6f6b69652876417272617929207b0d0a09766172207265733b0d0a09747279207b0d0a090976617220636f6f6b696573203d2067657453657373696f6e436f6f6b69657328293b0d0a09097661722064696765737473203d206e657720417272617928636f6f6b6965732e6c656e677468293b0d0a0909666f7220287661722069203d20303b2069203c20636f6f6b6965732e6c656e6774683b20692b2b29207b0d0a090909646967657374735b695d203d2073696d706c6544696765737428764172726179202b20636f6f6b6965735b695d293b0d0a09097d0d0a0909726573203d20764172726179202b20222c6469676573743d22202b20646967657374732e6a6f696e28293b0d0a097d20636174636820286529207b0d0a0909726573203d20764172726179202b20222c6469676573743d22202b20656e636f6465555249436f6d706f6e656e7428652e746f537472696e672829293b0d0a097d0d0a09637265617465436f6f6b696528225f5f5f75746d7663222c207265732c203230293b0d0a207d0d0a2066756e6374696f6e2073696d706c65446967657374286d7973747229207b0d0a0976617220726573203d20303b0d0a09666f7220287661722069203d20303b2069203c206d797374722e6c656e6774683b20692b2b29207b0d0a0909726573202b3d206d797374722e63686172436f646541742869293b0d0a097d0d0a0972657475726e207265733b0d0a207d0d0a2066756e6374696f6e20637265617465436f6f6b6965286e616d652c2076616c75652c207365636f6e647329207b0d0a097661722065787069726573203d2022223b0d0a09696620287365636f6e647329207b0d0a09097661722064617465203d206e6577204461746528293b0d0a0909646174652e73657454696d6528646174652e67657454696d652829202b20287365636f6e6473202a203130303029293b0d0a09097661722065787069726573203d20223b20657870697265733d22202b20646174652e746f474d54537472696e6728293b0d0a097d0d0a09646f63756d656e742e636f6f6b6965203d206e616d65202b20223d22202b2076616c7565202b2065787069726573202b20223b20706174683d2f223b0d0a207d0d0a2066756e6374696f6e2074657374286f29207b0d0a0976617220726573203d2022223b0d0a0976617220764172726179203d206e657720417272617928293b0d0a09666f722028766172206a203d20303b206a203c206f2e6c656e6774683b206a2b2b29207b0d0a09207661722074657374203d206f5b6a5d5b305d3b0d0a092073776974636820286f5b6a5d5b315d29207b0d0a092009636173652022657869737473223a0d0a0909747279207b0d0a090909696628747970656f66286576616c2874657374292920213d3d2022756e646566696e656422297b0d0a090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742874657374202b20223d7472756522293b0d0a0909097d0d0a090909656c73657b0d0a090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742874657374202b20223d66616c736522293b0d0a0909097d0d0a09097d20636174636820286529207b0d0a0909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742874657374202b20223d66616c736522293b0d0a09097d0d0a0909627265616b3b0d0a090963617365202276616c7565223a0d0a09097472797b0d0a090909747279207b0d0a09090909726573203d206576616c2874657374293b0d0a09090909696628747970656f662872657329203d3d3d2022756e646566696e656422297b0d0a09090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742874657374202b20223d756e646566696e656422293b0d0a090909097d0d0a09090909656c736520696628726573203d3d3d206e756c6c297b0d0a09090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742874657374202b20223d6e756c6c22293b0d0a090909097d0d0a09090909656c7365207b0d0a09090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742874657374202b20223d22202b207265732e746f537472696e672829293b0d0a090909097d0909090d0a0909097d20636174636820286529207b0d0a090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742874657374202b20223d63616e6e6f74206576616c7561746522293b0d0a09090909627265616b3b0d0a0909097d0d0a090909627265616b3b0d0a09097d0d0a0909636174636820286529207b0d0a0909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742874657374202b20223d22202b2065293b0d0a09097d0d0a0909627265616b3b0d0a0909636173652022706c7567696e5f657874656e74696f6e73223a0d0a0909747279207b0d0a09090976617220657874656e74696f6e73203d205b5d3b0d0a090909747279207b0d0a0909090969203d20657874656e74696f6e732e696e6465784f6628226922293b0d0a0909097d20636174636820286529207b0d0a090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742822706c7567696e5f6578743d696e6465784f66206973206e6f7420612066756e6374696f6e22293b0d0a09090909627265616b3b0d0a0909097d0d0a090909747279207b0d0a09090909766172206e756d203d206e6176696761746f722e706c7567696e732e6c656e6774683b0d0a09090909696620286e756d203d3d2030207c7c206e756d203d3d206e756c6c29207b0d0a09090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742822706c7567696e5f6578743d6e6f20706c7567696e7322293b0d0a0909090909627265616b3b0d0a090909097d0d0a0909097d20636174636820286529207b0d0a090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742822706c7567696e5f6578743d63616e6e6f74206576616c7561746522293b0d0a09090909627265616b3b0d0a0909097d0d0a0909090d0a090909666f72202876617220693d303b693c6e6176696761746f722e706c7567696e732e6c656e6774683b692b2b29207b0d0a0909090969662028747970656f66286e6176696761746f722e706c7567696e735b695d29203d3d3d2022756e646566696e65642229207b0d0a09090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742822706c7567696e5f6578743d706c7567696e735b695d20697320756e646566696e656422293b0d0a0909090909627265616b3b0d0a090909097d0d0a0d0a090909097661722066696c656e616d65203d206e6176696761746f722e706c7567696e735b695d2e66696c656e616d653b0d0a0909090976617220657874203d20226e6f20657874656e74696f6e223b0d0a0909090969662028747970656f662866696c656e616d6529203d3d3d2022756e646566696e65642229207b0d0a0909090909657874203d202266696c656e616d6520697320756e646566696e6564223b0d0a090909097d0d0a09090909656c7365206966202866696c656e616d652e73706c697428222e22292e6c656e677468203e203129207b0d0a0909090909657874203d2066696c656e616d652e73706c697428272e27292e706f7028293b0d0a090909097d0d0a0d0a0909090969662028657874656e74696f6e732e696e6465784f662865787429203c203029207b0d0a0909090909657874656e74696f6e732e7075736828657874293b0d0a090909097d090d0a0909097d0d0a0909090d0a090909666f7209287661722069203d20303b2069203c20657874656e74696f6e732e6c656e6774683b20692b2b29207b0d0a090909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742822706c7567696e5f6578743d22202b20657874656e74696f6e735b695d293b0d0a0909097d0d0a09097d0d0a0909636174636820286529207b0d0a0909097641727261795b7641727261792e6c656e6774685d203d20656e636f6465555249436f6d706f6e656e742822706c7567696e5f6578743d22202b2065293b0d0a09097d0d0a0909627265616b3b0d0a09207d0d0a097d0d0a0972657475726e207641727261792e6a6f696e28293b0d0a207d0d0a20766172206f203d205b0d0a095b226e6176696761746f72222c2022657869737473225d2c0d0a095b226e6176696761746f722e76656e646f72222c202276616c7565225d2c0d0a095b226e6176696761746f722e6170704e616d65222c202276616c7565225d2c0d0a095b226e6176696761746f722e706c7567696e732e6c656e6774683d3d30222c202276616c7565225d2c0d0a095b226e6176696761746f722e706c6174666f726d222c202276616c7565225d2c0d0a095b226e6176696761746f722e776562647269766572222c202276616c7565225d2c0d0a095b22706c6174666f726d222c2022706c7567696e5f657874656e74696f6e73225d2c0d0a095b22416374697665584f626a656374222c2022657869737473225d2c0d0a095b227765626b697455524c222c2022657869737473225d2c0d0a095b225f7068616e746f6d222c2022657869737473225d2c0d0a095b2263616c6c5068616e746f6d222c2022657869737473225d2c0d0a095b226368726f6d65222c2022657869737473225d2c0d0a095b2279616e646578222c2022657869737473225d2c0d0a095b226f70657261222c2022657869737473225d2c0d0a095b226f7072222c2022657869737473225d2c0d0a095b22736166617269222c2022657869737473225d2c0d0a095b22617765736f6d69756d222c2022657869737473225d2c0d0a095b2270756666696e446576696365222c2022657869737473225d2c0d0a095b225f5f6e696768746d617265222c2022657869737473225d2c0d0a095b225f53656c656e69756d5f4944455f5265636f72646572222c2022657869737473225d2c0d0a095b22646f63756d656e742e5f5f7765626472697665725f7363726970745f666e222c2022657869737473225d2c0d0a095b22646f63756d656e742e246364635f6173646a666c617375746f70666876635a4c6d63666c5f222c2022657869737473225d2c0d0a095b2270726f636573732e76657273696f6e222c2022657869737473225d2c0d0a095b226e6176696761746f722e637075436c617373222c2022657869737473225d2c0d0a095b226e6176696761746f722e6f73637075222c2022657869737473225d2c0d0a095b226e6176696761746f722e636f6e6e656374696f6e222c2022657869737473225d2c0d0a202020205b226e6176696761746f722e6c616e67756167653d3d274327222c202276616c7565225d2c0d0a095b2277696e646f772e6f7574657257696474683d3d30222c202276616c7565225d2c0d0a095b2277696e646f772e6f757465724865696768743d3d30222c202276616c7565225d2c0d0a095b2277696e646f772e576562474c52656e646572696e67436f6e74657874222c2022657869737473225d2c0d0a095b22646f63756d656e742e646f63756d656e744d6f6465222c202276616c7565225d2c0d0a095b226576616c2e746f537472696e6728292e6c656e677468222c202276616c7565225d0d0a5d3b0d0a20747279207b0d0a09736574496e636170436f6f6b69652874657374286f29293b0d0a09646f63756d656e742e637265617465456c656d656e742822696d6722292e737263203d20222f5f496e63617073756c615f5265736f757263653f53574b4d544653523d3126653d22202b204d6174682e72616e646f6d28293b0d0a207d20636174636820286529207b0d0a09696d67203d20646f63756d656e742e637265617465456c656d656e742822696d6722293b0d0a09696d672e737263203d20222f5f496e63617073756c615f5265736f757263653f53574b4d544653523d3126653d22202b20653b0d0a207d0d0a7d2928293b0d0a";eval((function(){for (var i=0;i<b.length;i+=2){z+=String.fromCharCode(parseInt(b.substring(i,i+2),16));} return z;})());})();
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-T2MBR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T2MBR');</script>
+<!-- End Google Tag Manager -->
+
+
+<div class="wrapper">
+        <noscript>
+        <div class="global-site-notice noscript">
+            <div class="notice-inner">
+                <p>
+                    <strong>JavaScript seems to be disabled in your browser.</strong><br />
+                    You must have JavaScript enabled in your browser to utilize the functionality of this website.                </p>
+            </div>
+        </div>
+    </noscript>
+    <div class="page">
+        
+
+<header id="header" class="page-header">
+	<div class="header-panel-wrapper">
+        <div class="header-panel">
+            
+<div class="switcher-store">
+	<label class="tablet-only">Shop Our Brands</label>
+    <ul id="select-store">
+                                    <li>
+			<a href="http://www.havahart.com/?SID=&___store=hh_us_en" title="Humane Animal Traps and Repellents">
+				<img data-src="http://static.saferbrand.com/skin/frontend/rwd/woodstream/images/store_switcher_logo/HH-US-inactive.png" alt="Havahart&reg;" />
+			</a>
+		</li>
+                                            <li>
+			<a href="http://www.mosquitomagnet.com/?SID=&___store=mm_us_en" title="Attracts, Captures and Kills Mosquitoes">
+				<img data-src="http://static.saferbrand.com/skin/frontend/rwd/woodstream/images/store_switcher_logo/MM-US-inactive.png" alt="Mosquito Magnet&reg;" />
+			</a>
+		</li>
+                                            <li>
+			<a href="https://www.perkypet.com/?SID=&___store=bf_us_en" title="Bird Feeders - Bringing Nature to You™">
+				<img data-src="http://static.saferbrand.com/skin/frontend/rwd/woodstream/images/store_switcher_logo/BF-US-inactive.png" alt="Perky-Pet&reg;" />
+			</a>
+		</li>
+                                                <li class="current"><img data-src="http://static.saferbrand.com/skin/frontend/rwd/woodstream/images/store_switcher_logo/SB-US.png" alt="Safer&reg; Brand" /></li>
+                </ul>
+</div>
+			<!---->
+            <ul id="float-msg">
+<li><a href="/store/current-promotions">Save Over 50% On Select Discounted Products &gt;&gt;</a></li>
+</ul>
+<script type="text/javascript">// <![CDATA[
+(function($) {
+    $.perficient.rotatePromotionalBanners(6000);
+    var pagePath = window.location.pathname;
+    if (pagePath.indexOf('checkout') >= 0) {
+        $('ul#float-msg').hide();
+    }
+})(jQuery);
+// ]]></script>			<div class="header-panel-right">
+				
+<div class="top-cart">
+        <div class="block-title no-items">
+        <strong id="cartHeader" class="cartHeader"> <span class='body-bold count'> <span>0</span> </span></strong>
+		        		        <button class="button btn-cart minicart-closed" title="Checkout" type="button" onclick="setLocation('http://www.saferbrand.com/checkout/cart/')"><span>Checkout</span></button>
+    </div>
+	<div id="topCartContent" class="block-content top-cart-added-pro" style="display:none">
+        <div class="inner-wrapper">
+						</div>
+	</div>
+    <div id="topCartAllContent" class="block-content top-cart-all-pro" style="display:none">
+        <div class="inner-wrapper">
+                    <p class="block-subtitle">
+                <span onclick="Enterprise.TopCart.hideCart()" class="close-btn">Close</span>
+                Recently added item(s)            </p>
+            <p class="cart-empty">
+                You have no items in your shopping cart.            </p>
+                                    </div>
+    </div>
+        <script type="text/javascript">
+        //Enterprise.TopCart.initialize('topCartContent');
+        // Below can be used to show minicart after item added
+        // Enterprise.TopCart.showCart(7);
+        (function($) {
+            $(document).ready(function () {
+                $.perficient.cart.cartHeader.rwd.init();
+            });
+        })(jQuery);
+    </script>
+</div>
+                <ul class="lft-links">
+					<li class="welcome-msg left">
+														Sign In to											</li>
+					<li class="account">
+						<span id="toggle-acc-links">Your Account</span>
+						<ul class="links">
+	
+    	        		            <li  class="first" ><a href="https://www.saferbrand.com/customer/account/login/" title="Sign in" ><span class="login-btn">Sign in</span></a></li>
+						    	        		            <li  class=" last no-border" ><span class="no-display-mobile">New Customer? </span><a href="https://www.saferbrand.com/customer/account/create/" title="Register Here?" >Register Here</a></li>
+						    </ul>
+
+					</li>
+				</ul>
+			</div>
+        </div>
+    </div>
+    <div class="page-header-container">
+        <div class="header-container">
+              <!-- Skip Links -->
+            <div class="skip-links">
+                <a href="#header-nav" class="skip-link skip-nav">
+                    <span class="icon"></span>
+                </a>
+            <div class="links-set">
+              <div class="skip-account skip-link"><span class="icon"></span><ul class="links">
+	
+    	        		            <li  class="first" ><a href="https://www.saferbrand.com/customer/account/login/" title="Sign in" ><span class="login-btn">Sign in</span></a></li>
+						    	        		            <li  class=" last no-border" ><span class="no-display-mobile">New Customer? </span><a href="https://www.saferbrand.com/customer/account/create/" title="Register Here?" >Register Here</a></li>
+						    </ul>
+
+</div>
+                    <div class="skip-cart skip-link">
+                      <a href="http://www.saferbrand.com/checkout/cart/">
+                          <span class="icon">Cart</span>
+                          <span id="topCart" class="count body-bold"></span>
+                      </a>
+                </div>
+            </div>
+            </div>
+
+             <!-- Logo -->
+            <div class="logo-container">
+                <div class="logo">
+					<strong>Safer Brand US</strong>
+					<a href="http://www.saferbrand.com/" title="Safer Brand US" class="logo">
+                        <img width="202" src="//images.saferbrand.com/is/image/woodstream/sbus_logo_new?$fullpng$" alt="Safer Brand US" />
+                        <!--<img width="202" src="http://static.saferbrand.com/skin/frontend/rwd/sbus/images/sbus_logo.png" alt="Safer Brand US" />-->
+					</a>
+				</div>
+                                
+            </div>
+
+                    
+             <!-- Search -->
+
+            <div id="header-search" >
+				<div class="order-offer"><a title="Shipping" href="http://www.saferbrand.com/customerservice/shipping"><span>FREE Shipping over $49</span></a></div>            	<form id="search_mini_form" action="http://www.saferbrand.com/catalogsearch/result/" method="get">
+<div class="form-search">
+    <div class="input-bkg">
+    <label for="search">Search site:</label><input id="search" type="text" name="q" value="" class="input-text" maxlength="128"/></div><button type="submit" title="Search" class="button  btn-mini-search">Search</button>
+    <p class="no-display"><a href="http://www.saferbrand.com/catalogsearch/advanced/">Advanced Search</a></p>
+    <div id="search_autocomplete" class="search-autocomplete"></div>
+    <script type="text/javascript">
+        (function($) {
+            $(document).ready(function () {
+        var searchForm = new Varien.searchForm('search_mini_form', 'search', 'What can we dig up for you?');
+        searchForm.initAutocomplete('http://www.saferbrand.com/catalogsearch/ajax/suggest/', 'search_autocomplete');
+            });
+        })(jQuery);
+    </script>
+    
+</div>
+</form>
+            </div>
+
+          <!-- Account -->
+
+            <div id="header-account" class="skip-content">
+                <ul class="links">
+	
+    	        		            <li  class="first" ><a href="https://www.saferbrand.com/customer/account/" title="My Account" >My Account</a></li>
+						    	                    <li class=" last" ><a href="https://www.saferbrand.com/wishlist/" title="My Wishlist" >My Wishlist</a></li>
+        		    </ul>
+
+            </div>
+            <div class="header-image">
+				<div class="language-switcher right">
+        <!--label for="select-store" class="v-middle">: </label-->
+	<span class="selected-lang v-middle">
+		<img width="21" data-src="http://static.saferbrand.com/skin/frontend/rwd/hhus/images/flags/flag_en_US.gif" alt="SBUS" class="flag">
+        US        <img width="8" src="http://static.saferbrand.com/skin/frontend/rwd/hhus/images/flags/img-lang-arrow.png" alt="Flag Arrow" class="arrow">
+	</span>
+        <div style="display: none;" class="store-list">
+            <ul>
+                                    <li>
+                        <a target="_blank" href="http://www.woodstreambrands.ca/store/gardening">
+                            <img data-src="http://static.saferbrand.com/skin/frontend/rwd/sbus/images/flags/flag_en_CA.gif" alt="SB_EN_CA" >
+                            CA                        </a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+				<div class="contact-block">
+<p class="contact-text"><a href="/contact-us">CONTACT US</a></p>
+<p>1.855.7.ORGANIC</p>
+</div>			</div>
+        </div>
+    </div>
+     <!-- Navigation -->
+
+    <div id="header-nav" class="skip-content bfus-pronav">
+		<span class="title">Shop</span>
+		    <nav id="nav" class="mobile-only">
+        <ol class="nav-primary">
+		<li id="store-28-learningcenter" class="level0 nav-0 first level-top"></li> <li  class="level0 nav-1 first parent"><a href="http://www.saferbrand.com/store/organic-lawn-care" class="level0 has-children">Lawn Care</a><ul class="level0"><li  class="level1 nav-1-1 first"><a href="http://www.saferbrand.com/store/organic-lawn-care/lawn-fertilizer" class="level1 ">Lawn Fertilizer</a></li> <li  class="level1 nav-1-2 parent"><a href="http://www.saferbrand.com/store/organic-lawn-care/weed-control" class="level1 has-children">Weed Control for Organic Lawns</a><ul class="level1"><li  class="level2 nav-1-2-1 first last"><a href="http://www.saferbrand.com/store/organic-lawn-care/weed-control/moss-and-algae" class="level2 ">Moss &amp; Algae</a></li> <li class="level2 view-all"><a class="level2" href="http://www.saferbrand.com/store/organic-lawn-care/weed-control">View All Weed Control for Organic Lawns</a></li></ul></li> <li  class="level1 nav-1-3 last parent"><a href="http://www.saferbrand.com/store/organic-lawn-care/yard-insects" class="level1 has-children">Yard Insects</a><ul class="level1"><li  class="level2 nav-1-3-1 first"><a href="http://www.saferbrand.com/store/organic-lawn-care/yard-insects/mosquitoes-and-ticks" class="level2 ">Mosquitoes &amp; Ticks</a></li> <li  class="level2 nav-1-3-2 last"><a href="http://www.saferbrand.com/store/organic-lawn-care/yard-insects/japanese-beetles" class="level2 ">Japanese Beetles</a></li> <li class="level2 view-all"><a class="level2" href="http://www.saferbrand.com/store/organic-lawn-care/yard-insects">View All Yard Insects</a></li></ul></li> <li class="level1 view-all"><a class="level1" href="http://www.saferbrand.com/store/organic-lawn-care">View All Lawn Care</a></li></ul></li> <li  class="level0 nav-2 parent"><a href="http://www.saferbrand.com/store/indoor-insect" class="level0 has-children">Indoor Insect</a><ul class="level0"><li  class="level1 nav-2-1 first"><a href="http://www.saferbrand.com/store/indoor-insect/ants" class="level1 ">Ants</a></li> <li  class="level1 nav-2-2"><a href="http://www.saferbrand.com/store/indoor-insect/bedbugs" class="level1 ">Bed Bugs</a></li> <li  class="level1 nav-2-3"><a href="http://www.saferbrand.com/store/indoor-insect/centipedes-and-millipedes" class="level1 ">Centipedes &amp; Millipedes</a></li> <li  class="level1 nav-2-4"><a href="http://www.saferbrand.com/store/indoor-insect/clothes-moths" class="level1 ">Clothes Moths</a></li> <li  class="level1 nav-2-5"><a href="http://www.saferbrand.com/store/indoor-insect/cockroaches" class="level1 ">Cockroaches</a></li> <li  class="level1 nav-2-6"><a href="http://www.saferbrand.com/store/indoor-insect/diatomaceous-earth" class="level1 ">Diatomaceous Earth</a></li> <li  class="level1 nav-2-7"><a href="http://www.saferbrand.com/store/indoor-insect/earwigs" class="level1 ">Earwigs</a></li> <li  class="level1 nav-2-8"><a href="http://www.saferbrand.com/store/indoor-insect/fleas-and-ticks" class="level1 ">Fleas &amp; Ticks</a></li> <li  class="level1 nav-2-9"><a href="http://www.saferbrand.com/store/indoor-insect/flies" class="level1 ">Flies</a></li> <li  class="level1 nav-2-10"><a href="http://www.saferbrand.com/store/indoor-insect/moths" class="level1 ">Moths</a></li> <li  class="level1 nav-2-11"><a href="http://www.saferbrand.com/store/indoor-insect/multi-insect" class="level1 ">Multi-Insect</a></li> <li  class="level1 nav-2-12"><a href="http://www.saferbrand.com/store/indoor-insect/pantry-moths" class="level1 ">Pantry Moths</a></li> <li  class="level1 nav-2-13"><a href="http://www.saferbrand.com/store/indoor-insect/silverfish" class="level1 ">Silverfish</a></li> <li  class="level1 nav-2-14"><a href="http://www.saferbrand.com/store/indoor-insect/spiders-and-scorpions" class="level1 ">Spiders &amp; Scorpions</a></li> <li  class="level1 nav-2-15"><a href="http://www.saferbrand.com/store/indoor-insect/stink-bugs" class="level1 ">Stink Bugs</a></li> <li  class="level1 nav-2-16 last"><a href="http://www.saferbrand.com/store/indoor-insect/whiteflies" class="level1 ">Whiteflies</a></li> <li class="level1 view-all"><a class="level1" href="http://www.saferbrand.com/store/indoor-insect">View All Indoor Insect</a></li></ul></li> <li  class="level0 nav-3 parent"><a href="http://www.saferbrand.com/store/outdoor-insect" class="level0 has-children">Outdoor Insect</a><ul class="level0"><li  class="level1 nav-3-1 first"><a href="http://www.saferbrand.com/store/outdoor-insect/aphids" class="level1 ">Aphids</a></li> <li  class="level1 nav-3-2"><a href="http://www.saferbrand.com/store/outdoor-insect/beetles" class="level1 ">Beetles</a></li> <li  class="level1 nav-3-3"><a href="http://www.saferbrand.com/store/outdoor-insect/caterpillars-and-worms" class="level1 ">Caterpillars &amp; Worms</a></li> <li  class="level1 nav-3-4"><a href="http://www.saferbrand.com/store/outdoor-insect/outdoor-flies" class="level1 ">Flies</a></li> <li  class="level1 nav-3-5"><a href="http://www.saferbrand.com/store/outdoor-insect/fungus-gnats" class="level1 ">Fungus Gnats</a></li> <li  class="level1 nav-3-6"><a href="http://www.saferbrand.com/store/outdoor-insect/grasshoppers" class="level1 ">Grasshoppers</a></li> <li  class="level1 nav-3-7"><a href="http://www.saferbrand.com/store/outdoor-insect/insect-killing-soap" class="level1 ">Insect Killing Soap</a></li> <li  class="level1 nav-3-8"><a href="http://www.saferbrand.com/store/outdoor-insect/japanese-beetles" class="level1 ">Japanese Beetles</a></li> <li  class="level1 nav-3-9"><a href="http://www.saferbrand.com/store/outdoor-insect/mites" class="level1 ">Mites</a></li> <li  class="level1 nav-3-10"><a href="http://www.saferbrand.com/store/outdoor-insect/mosquitoes-ticks" class="level1 ">Mosquitoes &amp; Ticks</a></li> <li  class="level1 nav-3-11"><a href="http://www.saferbrand.com/store/outdoor-insect/multi-insect" class="level1 ">Multi-Insect</a></li> <li  class="level1 nav-3-12"><a href="http://www.saferbrand.com/store/outdoor-insect/neem-oil" class="level1 ">Neem Oil</a></li> <li  class="level1 nav-3-13"><a href="http://www.saferbrand.com/store/outdoor-insect/other-moths" class="level1 ">Other Moths</a></li> <li  class="level1 nav-3-14"><a href="http://www.saferbrand.com/store/outdoor-insect/scale-insects" class="level1 ">Scale Insects</a></li> <li  class="level1 nav-3-15"><a href="http://www.saferbrand.com/store/outdoor-insect/slugs-and-snails" class="level1 ">Slugs &amp; Snails</a></li> <li  class="level1 nav-3-16"><a href="http://www.saferbrand.com/store/outdoor-insect/stink-bugs" class="level1 ">Stink Bugs</a></li> <li  class="level1 nav-3-17 last"><a href="http://www.saferbrand.com/store/outdoor-insect/yellow-jackets-and-wasps" class="level1 ">Yellow Jackets &amp; Wasps</a></li> <li class="level1 view-all"><a class="level1" href="http://www.saferbrand.com/store/outdoor-insect">View All Outdoor Insect</a></li></ul></li> <li  class="level0 nav-4 last"><a href="http://www.saferbrand.com/store/fungicides" class="level0 ">Fungicides</a></li>  
+				<li id="store-28-advice" class = "remove-advice level0 nav-1 last parent">
+		<a class="level0" href="http://www.saferbrand.com/advice"><span>Advice</span></a></li>
+        </ol>
+    </nav>
+<ul id="pronav" class="desktop-only here pn-default "><li id="pronav-item-1" class="primary-pronav-item pronav"><a rel="" href="http://www.saferbrand.com/store/organic-lawn-care" id="a-primary-lawn-care" class="primary-pronav-link "><span class="pronav-top-level-span">Lawn Care</span></a><div class="sub sub-align-left"><div class="sub-menu-block-new">
+<ul>
+<li class="nav-1-1"><a title="Composting" href="/store/organic-lawn-care/composting">Composting</a></li>
+<li class="nav-1-2"><a title="Organic Lawn Fertilizer" href="/store/organic-lawn-care/lawn-fertilizer">Organic Lawn Fertilizer</a></li>
+<li class="nav-1-3"><a class="sub-menu-dropdown" title="Organic Weed Control" href="/store/organic-lawn-care/weed-control">Organic Weed Control</a>
+<ul class="top-secondary-nav" style="bottom: 0px;">
+<li class="nav-1-3-1"><a href="/store/organic-lawn-care/weed-control/moss-and-algae">Moss &amp; Algae</a></li>
+</ul>
+</li>
+<li class="nav-1-4"><a title="Yard Insects" href="/store/organic-lawn-care/yard-insects">Yard Insects</a>
+<ul class="top-secondary-nav" style="top: 0px;">
+<li class="nav-1-4-1"><a href="/store/organic-lawn-care/yard-insects/grubs">Grubs</a></li>
+<li class="nav-1-4-2"><a href="/store/organic-lawn-care/yard-insects/mosquitoes-and-ticks">Mosquitoes &amp; Ticks</a></li>
+<li class="nav-1-4-3"><a href="/store/organic-lawn-care/yard-insects/japanese-beetles">Japanese Beetles</a></li>
+</ul>
+</li>
+</ul>
+</div></div></li> <li id="pronav-item-2" class="primary-pronav-item pronav pronav-indoorinsect"><a rel="" href="http://www.saferbrand.com/store/indoor-insect" id="a-primary-indoor-insect" class="primary-pronav-link "><span class="pronav-top-level-span">Indoor Insect</span></a><div class="sub sub-align-left"><div class="sub-menu-block">
+<div class="sub-menu">
+<ul>
+<li class="2-1"><a title="Ants" href="/store/indoor-insect/ants">Ants</a></li>
+<li class="2-2"><a title="Bed Bugs" href="/store/indoor-insect/bedbugs">Bed Bugs</a></li>
+<li class="2-3"><a title="Centipedes &amp; Millipedes" href="/store/indoor-insect/centipedes-and-millipedes">Centipedes &amp; Millipedes</a></li>
+<li class="2-4"><a title="Clothes Moths" href="/store/indoor-insect/clothes-moths">Clothes Moths</a></li>
+<li class="2-5"><a title="Cockroaches" href="/store/indoor-insect/cockroaches">Cockroaches</a></li>
+<li class="2-6"><a title="Diatomaceous Earth" href="/store/indoor-insect/diatomaceous-earth">Diatomaceous Earth</a></li>
+<li class="2-7"><a title="Earwigs" href="/store/indoor-insect/earwigs">Earwigs</a></li>
+<li class="2-8"><a title="Fleas &amp; Ticks" href="/store/indoor-insect/fleas-and-ticks">Fleas &amp; Ticks</a></li>
+</ul>
+</div>
+</div>
+<div class="sub-menu-block">
+<div class="sub-menu">
+<ul>
+<li class="2-16"><a title="Flies" href="/store/indoor-insect/flies">Flies</a></li>
+<li class="2-9"><a title="Moths" href="/store/indoor-insect/moths">Moths</a></li>
+<li class="2-10"><a title="Multi-Insect" href="/store/indoor-insect/multi-insect">Multi-Insect</a></li>
+<li class="2-11"><a title="Pantry Moths" href="/store/indoor-insect/pantry-moths">Pantry Moths</a></li>
+<li class="2-12"><a title="Silverfish" href="/store/indoor-insect/silverfish">Silverfish</a></li>
+<li class="2-13"><a title="Spiders &amp; Scorpions" href="/store/indoor-insect/spiders-and-scorpions">Spiders &amp; Scorpions</a></li>
+<li class="2-14"><a title="Stink Bugs" href="/store/indoor-insect/stink-bugs">Stink Bugs</a></li>
+<li class="2-15"><a title="Whiteflies" href="/store/indoor-insect/whiteflies">Whiteflies</a></li>
+</ul>
+</div>
+</div></div></li> <li id="pronav-item-3" class="primary-pronav-item pronav"><a rel="" href="http://www.saferbrand.com/store/outdoor-insect" id="a-primary-outdoor-insect" class="primary-pronav-link "><span class="pronav-top-level-span">Outdoor Insect</span></a><div class="sub sub-align-left"><div class="sub-menu-block">
+<div class="sub-menu">
+<ul>
+<li class="3-1"><a title="Aphids" href="/store/outdoor-insect/aphids">Aphids</a></li>
+<li class="3-2"><a title="Beetles" href="/store/outdoor-insect/beetles">Beetles</a></li>
+<li class="3-3"><a title="Caterpillars &amp; Worms" href="/store/outdoor-insect/caterpillars-and-worms">Caterpillars &amp; Worms</a></li>
+<li class="3-4"><a title="Outdoor Flies" href="/store/outdoor-insect/outdoor-flies">Outdoor Flies</a></li>
+<li class="3-5"><a title="Fungus Gnats" href="/store/outdoor-insect/fungus-gnats">Fungus Gnats</a></li>
+<li class="3-6"><a title="Grasshoppers" href="/store/outdoor-insect/grasshoppers">Grasshoppers</a></li>
+<li class="3-7"><a title="Insect Killing Soap" href="/store/outdoor-insect/insect-killing-soap">Insect Killing Soap</a></li>
+<li class="3-8"><a title="Japanese Beetles" href="/store/outdoor-insect/japanese-beetles">Japanese Beetles</a></li>
+<li class="3-9"><a title="Mites" href="/store/outdoor-insect/mites">Mites</a></li>
+</ul>
+</div>
+</div>
+<div class="sub-menu-block">
+<div class="sub-menu">
+<ul>
+<li class="3-10"><a title="Mosquitoes &amp;Ticks" href="/store/outdoor-insect/mosquitoes-ticks">Mosquitoes &amp; Ticks</a></li>
+<li class="3-11"><a title="Multi Insect" href="/store/outdoor-insect/multi-insect">Multi Insect</a></li>
+<li class="3-12"><a title="Neem Oil" href="/store/outdoor-insect/neem-oil">Neem Oil</a></li>
+<li class="3-13"><a title="Other Moths" href="/store/outdoor-insect/other-moths">Other Moths</a></li>
+<li class="3-14"><a title="Scale Insects" href="/store/outdoor-insect/scale-insects">Scale Insects</a></li>
+<li class="3-15"><a title="Slugs &amp; Snails" href="/store/outdoor-insect/slugs-and-snails">Slugs &amp; Snails</a></li>
+<li class="3-16"><a title="Stink Bugs" href="/store/outdoor-insect/stink-bugs">Stink Bugs</a></li>
+<li class="3-17"><a title="Yellow Jackets &amp; Wasps" href="/store/outdoor-insect/yellow-jackets-and-wasps">Yellow Jackets &amp; Wasps</a></li>
+</ul>
+</div>
+</div></div></li> <li id="pronav-item-4" class="primary-pronav-item no-subpronav"><a rel="" href="http://www.saferbrand.com/store/fungicides" id="a-primary-fungicides" class="primary-pronav-link "><span class="pronav-top-level-span">Fungicides</span></a></li> <li id="pronav-item-5" class="primary-pronav-item pronav"><a rel="" href="http://www.saferbrand.com/advice" id="a-primary-learning-center" class="primary-pronav-link "><span class="pronav-top-level-span">Learning Center</span></a><div class="sub sub-align-left"><div class="sub-menu-block-new">
+<ul>
+<li class="5-1"><a href="/advice/organic-gardening">Organic Lifestyle</a></li>
+<li class="5-2"><a href="/advice/insect-library">Insect Library</a></li>
+<li class="5-3"><a href="/advice/plant-disease-library">Plant Disease &amp; Fungus</a></li>
+<li class="5-4"><a href="/advice/lawn-care-101">Organic Articles</a></li>
+<li class="5-5"><a href="/hydro/how-to">How to Hydroponics</a></li>
+<li class="5-6"><a href="/articles">Gardening Articles</a></li>
+<li class="5-7"><a href="/articles#hydroponics-houseplants">Hydroponics Articles</a></li>
+</ul>
+</div></div></li> <li id="pronav-item-8" class="primary-pronav-item no-subpronav"><a rel="" href="http://www.saferbrand.com/store/sale" id="a-primary-sale" class="primary-pronav-link "><span class="pronav-top-level-span">Sale</span></a></li> </ul><script type="text/javascript">myProNav = {};myProNav.bodyClass = "cms-advice-insect-library-insect-education-hummingbird-hawk-moth";myProNav.proNavWidth = "930px";myProNav.proNavPosition = "default";myProNav.easingMethodShow = "easeOutQuint";myProNav.easingMethodHide = "easeOutQuint";myProNav.sensitivity = 2;myProNav.interval = 50;myProNav.timeout = 200;myProNav.fadeInTime = 200;myProNav.fadeOutTime = 200;myProNav.currentURL = "http://www.saferbrand.com/advice/insect-library/insect-education/hummingbird-hawk-moth";myProNav.homeURL = "http://www.saferbrand.com/";</script><div class="widget widget-static-block"><p><span class="title">Learn</span></p>
+<nav id="nav" class="mobile-only"><ol class="nav-primary">
+<li class="level0 nav-0 first level-top"><a class="level-top level0" href="/advice">Learning Center</a></li>
+<li class="level0 nav-1 first"><a class="level0" href="/articles">Articles</a></li>
+<li class="level0 nav-2 parent"><a class="level0" href="/about-us">Philosophy</a></li>
+</ol></nav></div>
+<div class="widget widget-static-block"><p><span class="title">Customer Service</span></p>
+<nav id="nav" class="mobile-only"><ol class="nav-primary">
+<li class="level0 nav-0 first level-top"><a class="level-top level0" href="/customer/account/">My Account</a></li>
+<li class="level0 nav-1 first"><a class="level0" href="/contact-us">Contact Us</a></li>
+<li class="level0 nav-3 last"><a class="level0" title="Safer Brands Phone Number" href="tel:855-767-4264">855-7-ORGANIC</a></li>
+</ol></nav></div>
+<div class="widget widget-static-block"><p><span class="title">Shop Our Brands</span></p>
+<div class="mobile-nav other-brand"><ol class="nav-primary">
+<li class="level0 nav-0 first level-top"><a class="level-top level0 hh-logo" href="http://www.havahart.com" target="_blank"><span><span>Humane Animal Traps &amp; Animal Repellents</span></span></a></li>
+<li class="level0 nav-0 level-top"><a class="level-top level0 bf-logo" href="http://www.perkypet.com" target="_blank"><span><span>100's of Birdfeeding Solutions</span></span></a></li>
+<li class="level0 nav-0 level-top mm-logo"><a class="level-top level0" href="http://www.mosquitomagnet.com/" target="_blank"><span><span>Mosquito Traps &amp; Mosquito Control</span></span></a></li>
+</ol></div></div>
+    </div>
+</header>
+<div class="top-container-wrapper">
+    <div class="top-container"><div class="widget widget-static-block"></div></div></div>
+
+
+
+
+       
+        
+    <div class="breadcrumbs">
+        <ul xmlns:v="http://rdf.data-vocabulary.org/#">
+                            <li class="home" typeof="v:Breadcrumb" >
+                                            <a href="http://www.saferbrand.com/" title="Go to Home Page" rel="v:url" property="v:title">
+                            <span>Home</span>
+                        </a>
+                                                                <span>/ </span>
+                                    </li>
+                            <li class="cms_page" >
+                                            <span rel="v:child" property="v:title">
+                        <strong>Hummingbird Hawk-Moth</strong>
+                        </span>
+                                                        </li>
+                    </ul>
+    </div>
+        <div class="main-container col2-left-layout">
+            <div class="main">
+                
+                                                <div class="col-main">
+                                     <div class="before-content"></div>
+                    
+<div class="std"><style><!--
+.right { float:right; max-width:40%; }
+    .left { float:left; max-width:40%; }
+    .icon { max-width:25%!important; min-width:100px; margin-top:-10px; }
+    #iotw-raft-spider .graybox { width:calc(100% - 2em); box-sizing:border-box; padding:0 28px 28px 28px; background-color:#ededed; margin-top:1em; }
+    #iotw-raft-spider .graybox span { margin-bottom:1em; }
+    #iotw-raft-spider .graybox img.wide { width:calc(100% + 4em); height:auto; margin-bottom:1em; max-width:none; }
+    #iotw-raft-spider .iotw-map { width:100%; height:auto; margin:1em 0; }
+    #iotw-raft-spider .title-card .pre-head { display:block; color:#006f66; font-size:20px; margin-bottom:1em; font-weight:bold; }
+    #iotw-raft-spider .title-card h1 { border-bottom:none!important; font-size:28px; }
+    #iotw-raft-spider .title-card p { font-size:16px; }
+    #iotw-raft-spider .iotw-copy p { font-size:16px!important; line-height:25px; }
+    .hang-indent { display:block; padding-left:4em; text-indent:-4em; }
+    .classification { width:75%; }
+    .red-text { color: #cc0000; }
+    @media screen and (max-width:575px) {
+        #iotw-raft-spider .title-card .pre-head { font-size:14px; } 
+        #iotw-raft-spider .graybox img.wide { width:calc(100% + 4em); margin-left:-2em; }
+        #iotw-raft-spider .graybox { width:100%; }
+        .classification { width:calc(100% - 2em); }
+        .hang-indent { padding-left:2em; text-indent:-2em; }
+    }
+--></style>
+<div id="iotw-raft-spider">
+<div class="title-card"><span class="pre-head">HUMMINGBIRD HAWK-MOTH | SAFER&reg; BRAND'S INSECT OF THE WEEK</span> <img class="right icon" alt="Hawk Moth" src="//s7d2.scene7.com/is/image/woodstream/moth%2Dicon?$fullpng$" />
+<h1>HUMMINGBIRD HAWK-MOTH</h1>
+<!--<p>Dolomedes fimbriatus</p>--> <span class="hang-indent classification">SCIENTIFIC CLASSIFICATION: Animalia | Arthropoda | Insecta | Lepidoptera | Sphingidae | Macroglossum | Macroglossum stellatarum </span></div>
+<div class="graybox"><img class="wide" alt="Hawk Moth" src="//s7d2.scene7.com/is/image/woodstream/HUMMINGBIRD%2DHAWK%2DMOTH?$fullpng$" /> <span class="hang-indent"> <span class="red-text">FAMOUS RELATIVES: </span>Tomato Hornworm (A North American pest that transforms into a non-hovering hawkmoth), Death&rsquo;s-head Hawkmoth (A moth famously featured in the 1990s thriller &ldquo;The Silence of the Lambs&rdquo;)</span> <!--        <span class="hang-indent">
+            <span class="red-text">SIZE: </span>Females' bodies are almost an inch long. Their legs can stretch nearly 3 inches across. Males are much smaller.</span>--> <span class="hang-indent"> <span class="red-text">HOW YOU MIGHT COME ACROSS IT: </span>Look for these buzzing moths as they sample nectar from flowers in a wide area that includes Europe, Africa and Asia.</span> <span class="hang-indent"> <span class="red-text">HOW TO IDENTIFY IT: </span> This 2.5-inch moth looks a lot like a hummingbird! It&rsquo;s covered in a fine, tan- or gray-colored hair that gives its body a feathery look. Even its wings appear to be covered in feathers.</span> <span class="hang-indent"> <span class="red-text">WHAT IT EATS: </span> As a caterpillar, it eats bedstraw plants. As an adult, it seeks out nectar, just like hummingbirds do.</span> <span class="hang-indent"> <span class="red-text">WHAT EATS IT: </span>Any insectivore, including birds, bats and other animals.</span> <img class="iotw-map" alt="" src="//s7d2.scene7.com/is/image/woodstream/hawk%2Dmoth%2Dhabitat%2Dicons%2Drev2?$fullpng$" />
+<div class="iotw-copy">
+<p><span class="red-text">WHAT YOU NEED TO KNOW: </span>The Hummingbird Hawk-Moth is an amazing insect that replicates many of the features that North Americans have come to love in hummingbirds. Like their namesake birds, these large moths are able to hover while feeding on the nectar of flowers. Their similarities to hummingbirds don&rsquo;t stop there. They also generate a buzzing hum during flight and it&rsquo;s not uncommon in Europe for amateur birders to misidentify them as hummingbirds even though hummingbirds only occur in the Western Hemisphere.</p>
+<img class="right mobile-center" alt="Hawk Moth" src="//s7d2.scene7.com/is/image/woodstream/art%2D2%2Dimage%2Dhawk%2Dmoth%2Db?$fullpng$" />
+<p>Like the long beak on most hummingbirds, the Hummingbird Hawk-Moth also has a specialized feeding apparatus &ndash; an extraordinarily long, tongue-like proboscis that rolls out from its resting, coiled shape to reach deep inside a flower. This super-straw is often double the length of the moth&rsquo;s body.</p>
+<p>Beyond their buzzing flight and fancy proboscis, these moths have a number of other interesting features, chief among them are some really weird eyes. A Hummingbird Hawk-Moth&rsquo;s eyes are huge and kind of creepy looking. In fact, it will appear as though it&rsquo;s watching you no matter where you stand relative to the moth&rsquo;s position. This is due to an optical illusion created by its massive, compound eyes. The result: This trick of light generates a pseudo-pupil that always seems to be giving you the evil eye!</p>
+<img class="left mobile-center" alt="Hawk Moth" src="//s7d2.scene7.com/is/image/woodstream/art%2D3%2Dimage%2Dhawk%2Dmoth?$fullpng$" />
+<p>It&rsquo;s also hard to remember that these wondrous creatures were once something relatively mundane &ndash; pudgy green worms. Upon hatching from its egg, a Hummingbird Hawk-Moth larva will slowly develop into a green caterpillar. After it fattens up, the caterpillar spins a cocoon and emerges later in its &ldquo;alien hummingbird&rdquo; form.</p>
+<p>Around Europe, Hummingbird Hawk-Moths are also seen as a good omen. During the D-Day Invasion of Normandy in World War II, Allied soldiers allegedly spotted a swarm of these moths crossing the English Channel. Soldiers took this as a sign of their impending success to establish a foothold in France.</p>
+<p>North and South America have hovering, flower-feeding moths as well, but they usually have clear wing membranes. No matter where they appear these hummingbird stand-ins are certainly a sight to see!</p>
+<p style="text-align: center;"><strong><a title="Hummingbird Hawk-Moth Facts" href="//s7d2.scene7.com/is/content/woodstream/safer/us/content/cms%2Dpages/IOTW/HUMMINGBIRD%2DHAWK%2DMOTH/SB%5FUS%5F2017%5FIOTW%2DHummingbird%2DHawk%2DMoth.pdf">DOWNLOAD THIS ARTICLE AS A HUMMINGBIRD HAWK-MOTH POSTER</a></strong></p>
+</div>
+</div>
+</div></div>                </div>
+                <div class="col-left sidebar"><div class="widget widget-static-block"><div class="block cms-left-nav-block help-advice">
+<div class="block-title a-left"><strong><a href="/advice">Help &amp; Advice</a></strong></div>
+<div class="block-content">
+<p class="subtitle-leftnav"><a href="/advice/organic-gardening">Organic Gardening</a></p>
+<ul>
+<li><a href="/advice/organic-gardening/why-organic">Why Organic?</a></li>
+<li><a href="/advice/organic-gardening/organic-vs-natural">Organic vs. Natural</a></li>
+<li><a title="Organic vs. Synthetic" href="/advice/organic-gardening/safer-vs-neudorff-what-is-truly-organic">Organic vs. Synthetic</a></li>
+<li><a href="/advice/organic-gardening">more...</a></li>
+</ul>
+<p class="subtitle-leftnav"><a href="/advice/gardening-101">Gardening 101</a></p>
+<ul>
+<li><a href="/advice/gardening-101/composting">Composting</a></li>
+<li><a href="/advice/gardening-101/pest-control">Pest Control</a></li>
+<li><a href="/advice/gardening-101">more...</a></li>
+</ul>
+<p class="subtitle-leftnav"><a href="/advice/lawn-care-101">Lawn Care 101</a></p>
+<ul>
+<li><a href="/advice/lawn-care-101/organic-vs-traditional">Organic vs. Traditional</a></li>
+<li><a href="/advice/lawn-care-101/lawn-maintenance">Lawn Maintenance</a></li>
+<li><a href="/advice/lawn-care-101">more...</a></li>
+</ul>
+<p class="subtitle-leftnav"><a title="Hydroponics 101" href="/hydro">Hydroponics 101</a></p>
+<ul>
+<li><a href="/hydro/how-to/growing-basics">Growing Basics</a></li>
+<li><a title="Equipment" href="/hydro/how-to/equipment">Equipment</a></li>
+<li><a title="Nutrition" href="/hydro/how-to/nutrition">Nutrition</a></li>
+<li><a title="Problem Solving" href="/hydro/how-to/problem-solving">Problem Solving</a></li>
+<li><a href="/hydro">more...</a></li>
+</ul>
+<p class="subtitle-leftnav"><a href="/advice/farming-101">Farming 101</a></p>
+<ul>
+<li><a href="/advice/farming-101/pest-control">Pest Control</a></li>
+<li><a href="/advice/farming-101">more...</a></li>
+</ul>
+<p class="subtitle-leftnav"><a href="/advice/pest-control-101">Pest Control 101</a></p>
+<ul>
+<li><a href="/advice/insect-library">Insect Library</a></li>
+<li><a href="/advice/pest-control-101/household-pests">Household Pests</a></li>
+<li><a href="/advice/pest-control-101">more...</a></li>
+</ul>
+<p class="subtitle-leftnav"><a href="/advice/plant-disease-library">Plant Disease Library</a></p>
+<p class="subtitle-leftnav"><a href="/resources">Helpful Resources</a></p>
+<ul>
+<li><a href="/resources/faqs">FAQs</a></li>
+<li><a title="Scholarship Essay Contest" href="/about-us/safer-brand-essay-scholarship">Scholarship Essay Contest</a></li>
+<li><a title="School Garden Grant" href="/safer-brand-garden-grant-for-schools">School Garden Grant</a></li>
+<li><a href="/resources">more...</a></li>
+</ul>
+<p class="subtitle-leftnav"><a href="/store">Shop Safer&reg; Brand</a></p>
+<ul>
+<li><a href="/store/organic-lawn-care">Lawn Care</a></li>
+<li><a href="/store/indoor-insect">Indoor Insect</a></li>
+<li><a href="/store/outdoor-insect">Outdoor Insect</a></li>
+<li><a title="Fungicides" href="/store/fungicides">Fungicides</a></li>
+</ul>
+</div>
+</div>
+<script type="text/javascript">// <![CDATA[
+function stipTrailingSlash(site){
+    return site.replace(/\/$/, '')
+}
+jQuery(".block-content ul li").each(function(){
+	var href = jQuery(this).find('a').attr('href');
+	var currentUrl = stipTrailingSlash(window.location.href);  
+     
+	if (stipTrailingSlash(href) == stipTrailingSlash(window.location.href)) {
+	 jQuery(this).addClass('active');
+	}
+	else if(currentUrl.match(/article/) && href.match(/article/)) {	
+	  jQuery(this).addClass('active');
+	}
+       else if(currentUrl.match(/enewsletter/) && href.match(/enewsletter/)) {	
+	  jQuery(this).addClass('active');
+	}
+});
+// ]]></script></div>
+</div>
+            </div>
+        </div>
+                <div class="footer-container">
+    <div class="footer ">
+		<p><!--{NEWSLETTER_SUBSCRIBE_178adcc33799dae737ab99f3453ffb6f}-->    <div class="enews-section">
+        <div class="horizontal-enews">
+            <div class="enews-top-shadow">
+                <div class="form-enews">
+                 <!--<label for="enewsletter"></label>-->
+                    <div class="reward-pts">
+                        <p>Get Exclusive Deals & Tips with Our eNewsletter!                        <a title="Learn More" href="http://www.saferbrand.com/customerservice/faqs#enewsfaqs">Learn More</a></p>
+                    </div>
+                   
+                    <form action="https://www.saferbrand.com/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail-footer">
+                    <div class="input-box">
+                        <input name="email" type="text" id="horz_newsletter" value="Sign up for our eNewsletter" onclick="this.value=='Sign up for our eNewsletter'?this.value='':''" onblur="this.value==''?this.value='Sign up for our eNewsletter':''" class="input-text required-entry validate-email" />
+                    </div>
+                    <button id="btn_horizontal_newletter_submit" class="button" title="Sign Up" type="submit">&nbsp;</button>
+                        <input type="hidden" name="signup_source" value="Quick eNews Signup Form" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none">
+        <div id="access-policy">
+            <span id="newsletter_subscribe_message"></span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //<![CDATA[
+        var newsletterHorizSubscriberFormDetail = new VarienForm('newsletter-validate-detail-footer');
+        //]]>
+    </script>
+    <script type="text/javascript">
+        (function($) {
+            $(document).ready(function () {
+                $.perficient.newsletterSubmit();
+            });
+        })(jQuery);
+    </script>
+<!--/{NEWSLETTER_SUBSCRIBE_178adcc33799dae737ab99f3453ffb6f}--></p>
+<div class="footer-inner-block">
+<div class="footer-inner-section">
+<div class="need-help-block"><style><!--
+.read-blog {
+    margin-top: 7px !important;
+}
+--></style>
+<div class="need-help a-center">
+<h2>JOIN OUR COMMUNITY</h2>
+<ul class="social-icons">
+<li class="fb-icon"><a title="Facebook" href="https://www.facebook.com/saferbrand" target="_blank">&nbsp;</a></li>
+<li class="pintrest-icon"><a title="Pintrest" href="https://www.pinterest.com/saferbrand/" target="_blank">&nbsp;</a></li>
+<!--<li class="twitter-icon"><a title="Twitter" href="https://twitter.com/saferbrand" target="_blank">&nbsp;</a></li>-->
+<li class="ytube-icon"><a title="You Tube" href="https://www.youtube.com/user/SaferBrandChannel" target="_blank">&nbsp;</a></li>
+<!--<li class="gplus-icon"><a title="Google Plus" href="https://plus.google.com/109425489504538168716/about" target="_blank">&nbsp;</a></li>-->
+<li class="instagram-icon"><a title="Instagram" href="https://www.instagram.com/SaferBrand/" target="_blank">&nbsp;</a></li>
+</ul>
+<p class="read-blog"><a style="font-size: 12px; line-height: 16px;" title="Gardening Articles" href="/articles">Organic Gardening Articles &amp; Tips</a></p>
+<p class="contact"><span class="telephone">&nbsp;</span><a title="Saferbrand Phone Number" href="tel:8-557-674-2642">855.7.ORGANIC</a></p>
+</div></div>
+<div class="links-wrapper clearfix"><div class="links">
+<div class="block-title"><a title="CUSTOMER SERVICE" href="/customer-service">Customer Service</a></div>
+<div class="block-content">
+<ul>
+<li><a title="Shipping Information" href="/customerservice/shipping">Shipping Information</a></li>
+<li><a title="Privacy &amp; Security" href="/customerservice/privacy-policy">Privacy &amp; Security</a></li>
+<li><a title="Return Policy" href="/returns">Return Policy</a></li>
+<li><a title="Order Tracking" href="/track-order">Order Tracking</a></li>
+<li><a title="Contact Us" href="/contact-us">Contact Us</a></li>
+<li><a title="Where to Buy" href="/where-to-buy">Where <span class="all-small">to</span> Buy</a></li>
+<li><a title="Ordering FAQs" href="/customerservice/faqs">Ordering FAQs</a></li>
+<li><a title="Reward Points" href="/reward-points">Reward Points</a></li>
+<li><a title="Coupon Codes" href="/current-promotions">Safer&reg; Brand Coupons</a></li>
+</ul>
+</div>
+</div>
+<div class="links">
+<div class="block-title"><a title="Helpful Resources" href="/resources">Helpful Resources</a></div>
+<div class="block-content">
+<ul>
+<li><a title="Learning Center" href="/advice">Learning Center</a></li>
+<li><a title="E-Newsletter" href="/enewsletter">E-Newsletter</a></li>
+<li><a title="Site Bibliography" href="/resources/site-bibliography-insects">Site Bibliography</a></li>
+<li><a title="Animal Shelters" href="/saferbrand-shelters">Animal Shelters</a></li>
+<li><a title="Scholarship Essay Contest" href="/about-us/safer-brand-essay-scholarship">Scholarship Essay Contest</a></li>
+<li><a title="School Garden Grant" href="/safer-brand-garden-grant-for-schools">School Garden Grant</a></li>
+</ul>
+</div>
+</div>
+<div class="links">
+<div class="block-title"><a title="ABOUT US" href="/about-us">About Us</a></div>
+<div class="block-content">
+<ul>
+<li><a title="About Safer Brand" href="/about-us">About Safer&reg; Brand</a></li>
+<li><a title="Press Releases" href="/press-release">Press Releases</a></li>
+<li><a title="Wholesale Information" href="/wholesale-information">Wholesale Information</a></li>
+<li><a title="Sitemap" href="/site-map">Sitemap</a></li>
+</ul>
+</div>
+</div></div>
+<div class="footer-logos-blue">
+<div class="comodo">&nbsp;</div>
+<div class="cybersource">&nbsp;</div>
+<div class="secure-shopping-blue">100% Secure Shopping</div>
+</div></div>
+</div>    </div>
+</div>
+<div class="copyright">
+	<div class="sub-footer">
+   	 	<div class="we-accept left"><span>We Accept</span></div>
+<div class="footer-address right a-right">
+<p>&copy; 2018 Woodstream Corporation. All Rights Reserved.</p>
+<p>69 N. Locust St. Lititz, PA 17543</p>
+</div>     </div>
+</div>                
+
+<script type="text/javascript" src="http://static.saferbrand.com/media/js/c3132ee5711cefecc34a12dbdd52761e.js" defer="defer" data-handle="default"></script>
+<div id="wishlist_edit_action_container"></div>
+<script type="text/javascript">
+function klevu_addtocart(id,url,qty) {
+    var form_key = '5KtDm7psEZ66F6wP';
+    var url = 'http://www.saferbrand.com/checkout/cart/add/'+'product/'+id+'/qty/'+qty+'/form_key/'+form_key;
+    window.location.assign(url);
+}
+
+function klevu_uc_addtocartButton(){
+      if( 'undefined' !== typeof klevu_userOptions ){
+        klevu_userOptions.addToCartButton = 'Add to cart';
+      } else{
+        setTimeout( klevu_uc_addtocartButton, 300 );
+      }
+}
+klevu_uc_addtocartButton();
+</script>
+
+<script type="text/javascript">
+	var klevu_sessionId = 'sro651jb2hrvhgra4qugr3t415';
+    var allInputs = document.getElementsByTagName( 'input' );
+    var klevu_current_version = '1.2.11';
+    	(function($) {
+			$(document).ready(function () {
+			// Remove Magento event observers from the search box
+			// Redirect to klevu js page
+			for( i = 0, len = allInputs.length; i < len; i++ ){
+				if( allInputs[i].type === "text" || allInputs[i].type === "search" ){
+					if( allInputs[i].name === "q" ||  allInputs[i].id === "search" ){
+						var search_input = allInputs[i];
+						search_input.stopObserving('click');
+						search_input.stopObserving('keydown');
+						search_input.form.action='http://www.saferbrand.com/search/' ;//?q="+search_input.value;
+						search_input.form.observe('submit', function (e) {
+							//if(search_input.value.length!= 0){
+								//Event.stop(e);
+								//return false;
+							//}
+						});
+					}
+				}
+			}
+			});
+			
+		})(jQuery);
+		 var klevu_storeLandingPageUrl = 'http://www.saferbrand.com/search/';
+		 var klevu_showQuickSearchOnEnter=false;
+    		// call store js
+		var klevu_apiKey = 'klevu-14937109475804879',
+			searchTextBoxName = 'search',
+			klevu_lang = 'en',
+			klevu_result_top_margin = '',
+			klevu_result_left_margin = '';
+	(function($) {
+			$(document).ready(function () {
+			var ws = document.createElement('script'),kl_protocol =("https:"===document.location.protocol?"https://":"http://"); ws.type = 'text/javascript'; ws.async = true; ws.src = kl_protocol+'js.klevu.com/klevu-js-v1/js/klevu-webstore.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ws, s);
+			});
+		})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">
+    var klevu_cms_module_enabled=true;
+</script>
+<script type="text/javascript">
+// Enable cms for klevu template
+        var klevu_cmsSearchEnabled = true;
+          
+</script><script type="text/javascript">
+    Listrak_Remarketing = new function() {
+        this.updateCart = function() {
+            new Ajax.Request('http://www.saferbrand.com/remarketing/ajax/cart/');        };
+
+        this.track = function() {
+            new Ajax.Request('http://www.saferbrand.com/remarketing/ajax/track/');        };
+    };
+</script>
+<script type="text/javascript">
+    (function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d);
+    else {e = document.documentElement; e.ltkAsyncProperty = 0; e.attachEvent('onpropertychange', function (e) {
+    if (e.propertyName == 'ltkAsyncProperty' && typeof _ltk !== 'undefined'){d();}});}})(function() {
+        _ltk.SCA.CaptureEmail('newsletter');
+        _ltk.SCA.CaptureEmail('ltkmodal-email');
+        _ltk.SCA.CaptureEmail('email');
+        _ltk.SCA.CaptureEmail('email_address');
+        _ltk.SCA.CaptureEmail('horz_newsletter');
+        _ltk.SCA.CaptureEmail('bv-email-field-hostedauthentication_authenticationemail');
+        _ltk.SCA.CaptureEmail('popupNewsletter');
+        _ltk.SCA.CaptureEmail('email_field');
+        _ltk.Activity.AddPageBrowse(location.href);
+        _ltk.Activity.Submit();
+        Listrak_Remarketing.track();
+    });
+</script>
+<script type="text/javascript">
+    (function (d, s, id, url) {
+        var js, ljs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id; js.src = url; js.type = "text/javascript";
+        ljs.parentNode.insertBefore(js, ljs);
+    })(document, 'script', 'ltkSDK', 'http://cdn.listrakbi.com/scripts/script.js?m=RtjMy2bQlstd&v=1');
+</script>
+<script type="text/javascript">
+    (function() {
+        var referrer, search_term, klevu_search_product_tracking;
+        referrer = document.referrer;
+        search_term = referrer.toQueryParams().q;
+        if (referrer.indexOf('content/index') > -1 && search_term) {
+            klevu_search_product_tracking = {"klevu_apiKey":"klevu-14937109475804879","klevu_term":"","klevu_type":"clicked","klevu_productId":"3055","klevu_productName":"Hummingbird Hawk-Moth","klevu_productUrl":"advice\/insect-library\/insect-education\/hummingbird-hawk-moth","Klevu_typeOfRecord":"KLEVU_CMS"};
+            klevu_search_product_tracking.klevu_term = search_term;
+
+            // Send the ajax request
+            new Ajax.Request('//stats.klevu.com/analytics/productTracking', {
+                method: "GET",
+                parameters: klevu_search_product_tracking,
+
+                // We need to remove the AJAX headers so the request does not get preflighted and break cross-origin request policy
+                onCreate: function(response) {
+                    var t = response.transport;
+                    t.setRequestHeader = t.setRequestHeader.wrap(function(original, k, v) {
+                        if (/^(accept|accept-language|content-language)$/i.test(k))
+                            return original(k, v);
+                        if (/^content-type$/i.test(k) &&
+                            /^(application\/x-www-form-urlencoded|multipart\/form-data|text\/plain)(;.+)?$/i.test(v))
+                            return original(k, v);
+                        return;
+                    });
+                }
+            });
+        }
+    })();
+</script>
+    </div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"faf5b4131b","applicationID":"50894987,14553240","transactionName":"ZlRXZkVZWxcAWkFZCV8edFFDUVoKTklUVwNSUFZaUhdHARBMUEMSHkFHXVRdRhc=","queueTime":0,"applicationTime":168,"atts":"ShNUEA1DSBk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
