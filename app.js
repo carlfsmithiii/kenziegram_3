@@ -14,7 +14,13 @@ app.use(express.static(publicPath));
 const storage = multer.diskStorage({
     destination: uploadsPath,
     filename: function (req, file, callback) {
-        callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+        const fileExtName = path.extname(file.originalname);
+        const newFilename = file.originalname.replace(new RegExp(fileExtName), '')
+            + '-' 
+            + Date.now() 
+            + fileExtName;
+        // callback(null, file.originalname.replace(new RegExp(path.extname(file.originalname)), '') + '-' + Date.now() + path.extname(file.originalname));
+        callback(null, newFilename);
     }
 });
 
@@ -41,13 +47,19 @@ function checkFileType(file, callback) {
 
 app.get('/', (req, res) => {
     fs.readdir(uploadsPath, function(err, items) {
-        const itemPaths = items.map(item => `uploads/${item}`);
+        if (err) {
+            return console.log(`Error reading directory ${uploadsPath} `, err);
+        }
+        const itemPaths = items
+            .map(item => `uploads/${item}`)
+            .map(imagePath => [fs.statSync(path.join('public', imagePath)).ctime, imagePath])
+            .sort((cTimeAndPath1, cTimeAndPath2) => cTimeAndPath2[0] - cTimeAndPath1[0])
+            .map(([imageCtime, imagePath]) => imagePath);
         res.render('index', {title: 'KenzieGram', h1: 'Welcome to Kenziegram', images: itemPaths});
     });
 });
 
 app.post('/uploads/', upload.single('myImage'), (req, res) => {
-    // res.send(`<a href="..">Back</a><img src="${req.file.filename}">`);
     res.render('upload', {title: 'Upload', h1: 'file uploaded', imagePath: `uploads/${req.file.filename}`});
 });
 
