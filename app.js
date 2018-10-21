@@ -19,7 +19,6 @@ const storage = multer.diskStorage({
             + '-' 
             + Date.now() 
             + fileExtName;
-        // callback(null, file.originalname.replace(new RegExp(path.extname(file.originalname)), '') + '-' + Date.now() + path.extname(file.originalname));
         callback(null, newFilename);
     }
 });
@@ -52,7 +51,7 @@ app.get('/', (req, res) => {
         }
         const itemPaths = items
             .map(item => `uploads/${item}`)
-            .map(imagePath => [fs.statSync(path.join('public', imagePath)).ctime, imagePath])
+            .map(imagePath => [fs.statSync('public/' + imagePath).ctime, imagePath])
             .sort((cTimeAndPath1, cTimeAndPath2) => cTimeAndPath2[0] - cTimeAndPath1[0])
             .map(([imageCtime, imagePath]) => imagePath);
         res.render('index', {title: 'KenzieGram', h1: 'Welcome to Kenziegram', images: itemPaths});
