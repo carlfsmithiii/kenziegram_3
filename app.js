@@ -8,9 +8,9 @@ const uploadsPath = './public/uploads';
 const publicPath = './public/';
 
 const app = express();
+app.use(express.json());
 app.set('view engine', 'pug');
 app.use(express.static(publicPath));
-// const upload = multer({ dest: './public/uploads/'});
 const storage = multer.diskStorage({
     destination: uploadsPath,
     filename: function (req, file, callback) {
@@ -51,11 +51,35 @@ app.get('/', (req, res) => {
         }
         const itemPaths = items
             .map(item => `uploads/${item}`)
-            .map(imagePath => [fs.statSync('public/' + imagePath).ctime, imagePath])
-            .sort((cTimeAndPath1, cTimeAndPath2) => cTimeAndPath2[0] - cTimeAndPath1[0])
-            .map(([imageCtime, imagePath]) => imagePath);
+            .map(imagePath => [fs.statSync('public/' + imagePath).mtimeMs, imagePath])
+            .sort((mTimeAndPath1, mTimeAndPath2) => mTimeAndPath2[0] - mTimeAndPath1[0])
+            .map(([imageMtime, imagePath]) => imagePath);
         res.render('index', {title: 'KenzieGram', h1: 'Welcome to Kenziegram', images: itemPaths});
     });
+});
+
+app.post('/latest', (req, res) => {
+    let newestTimestamp = req.body.after;
+    fs.readdir(uploadsPath, function(err, items) {
+        if (err) {
+            return console.log(`Error reading directory ${uploadsPath} `, err);
+        }
+        const newImageMtimesAndPaths = items
+            .map(item => `uploads/${item}`)
+            .map(imagePath => [fs.statSync('public/' + imagePath).mtimeMs, imagePath])
+            .sort((mTimeAndPath1, mTimeAndPath2) => mTimeAndPath2[0] - mTimeAndPath1[0])
+            .filter(mTimeAndPath => mTimeAndPath[0] > newestTimestamp);
+        if (newImageMtimesAndPaths.length > 0) {
+            newestTimestamp = newImageMtimesAndPaths[0][0];
+            const newImagePaths = newImageMtimesAndPaths.map(([imageMtime, imagePath]) => imagePath);
+            res.send({
+                images: newImagePaths,
+                timestamp: newestTimestamp
+            });
+        } else {
+            res.send({});
+        }
+    }); 
 });
 
 app.post('/uploads/', upload.single('myImage'), (req, res) => {
