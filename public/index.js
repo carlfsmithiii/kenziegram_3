@@ -13,9 +13,9 @@ function checkForNewImages(timestamp) {
     successiveFailures++;
     if (successiveFailures > 2) {
         clearInterval(interval);
+        document.getElementById('connection-lost').appendChild(document.createTextNode('Server Connection Lost'));
         return;
     }
-    console.log('checking...');
     fetch(`${url}latest`, {
         method: 'POST',
         headers: {
